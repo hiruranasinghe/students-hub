@@ -1,4 +1,4 @@
-package com.secapp.nsbm_student_hub.security;
+package com.secapp.nsbm_student_hub.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,7 +22,8 @@ public class SecurityConfig {
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
                         .anyRequest().authenticated())
-                .formLogin(Customizer.withDefaults());
+                .formLogin(form -> form
+                        .defaultSuccessUrl("/api/students", true));
 
         return http.build();
     }
