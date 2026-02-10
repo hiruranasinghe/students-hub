@@ -3,10 +3,10 @@ package com.secapp.nsbm_student_hub.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-@Entity
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity
 @Table(
         name = "students",
         uniqueConstraints = @UniqueConstraint(columnNames = "email")
